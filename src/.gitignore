@@ -1,0 +1,7 @@
+# grade & ide
+gradle/
+gradlew
+gradlew.bat
+script.iml
+.gradle/
+.idea
