@@ -9,7 +9,7 @@ String PROJECT_PATH = util.readStringByTerminal(
         //'/Users/2bab/Desktop/Binit/Demo'
 String MODULE_NAME = "/" + util.readStringByTerminal(
         '===Please input the Name of Major Module===') // app
-
+int FLAG = util.readIntByTerminal('Which method do you need?\nAll ... 0\nUpdate Common ... 1')
 
 //=========================== Get PackageName =============================
 String MANIFEST_PATH = '/src/main/AndroidManifest.xml'
@@ -25,9 +25,10 @@ println "find packageName : ${PACKAGE}"
 
 
 //=========================== Copy Files =============================
-util.copyFile('script/.gitignore', PROJECT_PATH + '/.gitignore')
-util.copyFile('script/keystore.gradle', PROJECT_PATH + MODULE_NAME + '/keystore.gradle')
 util.copyFile('bingyan-common', PROJECT_PATH + '/bingyan-common')
 util.appendTextAtTheEndOfFile('\r\ninclude \':bingyan-common\'', PROJECT_PATH + '/settings.gradle')
+if (FLAG == 1) return
+util.copyFile('script/.gitignore', PROJECT_PATH + '/.gitignore')
+util.copyFile('script/keystore.gradle', PROJECT_PATH + MODULE_NAME + '/keystore.gradle')
 util.copyFile('script/build.gradle', PROJECT_PATH + MODULE_NAME + '/build.gradle')
 util.replaceText(PACKAGE, 'PACKAGE_NAME', PROJECT_PATH + MODULE_NAME + '/build.gradle')

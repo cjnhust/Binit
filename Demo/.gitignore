@@ -39,8 +39,6 @@ out/
 *.hprof
 
 # Secret
-*.keystore
 *.jks
-app.properties
-keystore.*
+
 

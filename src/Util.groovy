@@ -32,6 +32,12 @@ def readStringByTerminal(String hint) {
     return sc.nextLine()
 }
 
+def readIntByTerminal(String hint) {
+    println hint
+    Scanner sc = new Scanner(System.in)
+    return sc.nextInt()
+}
+
 def findString(String origin, String rexText, String hint) {
     String rex = rexText
     Pattern pattern = Pattern.compile(rex)
